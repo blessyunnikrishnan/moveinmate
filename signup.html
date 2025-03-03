@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #f7f7f7;
+        }
+
+        .signup-container {
+            margin: 50px auto;
+            max-width: 900px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .signup-box {
+            padding: 30px;
+        }
+
+        .signup-box h5 {
+            font-size: 24px;
+            color: #00B98E;
+            margin-bottom: 20px;
+        }
+
+        .signup-row {
+            margin-bottom: 15px;
+        }
+
+        .signup-row input,
+        .signup-row select {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #00B98E;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #009e7d;
+        }
+
+        .donroo a {
+            color: #00B98E;
+        }
+
+        .donroo a:hover {
+            text-decoration: underline;
+        }
+
+        .copyc {
+            text-align: center;
+            padding: 17px;
+            color: #999;
+        }
+      
+    </style>
+</head>
+
+<body>
+   
+    <div class="container">
+        <div class="row signup-container">
+            <div class="col-lg-6 img-box" style="
+            align-content: center;">
+                <img src="img/about.jpg" alt="Signup Banner" style="
+                align-content: center;
+            ">
+            </div>
+            <div class="col-lg-6">
+                <div class="signup-box">
+                    <h5>Create an Account</h5>
+                    <form onsubmit="submitSignup(event)">
+                        <div class="signup-row">
+                            <label><i class="fas fa-user"></i> Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="signup-row">
+                            <label><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="signup-row">
+                            <label><i class="fas fa-users"></i> Role</label>
+                            <select class="form-control" id="role" required onchange="togglePasswordField()">
+                                <option value="guest">Guest</option>
+                                <option value="dealer">Dealer</option>
+                            </select>
+                        </div>
+                        <div class="signup-row" id="irp" style="display: none;">
+                            <label><i class="fas fa-lock"></i> Irp Number</label>
+                            <input type="text" class="form-control" id="irp2">
+                        </div>
+                        <div class="signup-row" id="pasport" style="display: block;">
+                            <label><i class="fas fa-lock"></i> Passport number :</label>
+                            <input type="text" class="form-control" id="passport">
+                        </div>
+                        <div class="signup-row">
+                            <label><i class="fas fa-envelope"></i> Mobile number</label>
+                            <input type="text" class="form-control" id="mobile"  required>
+                        </div>
+                        <div class="signup-row">
+                            <label><i class="fas fa-lock"></i> Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="signup-row text-center">
+                            <button class="btn btn-primary btn-block">Sign Up</button>
+                        </div>
+                        <div class="signup-row donroo text-center">
+                            <p>Already have an Account? <a href="login.html">Sign In</a></p>
+                        </div>
+                    </form>                    
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</body>
+<script src="js/signupScript.js"></script>
+
+
+</html>

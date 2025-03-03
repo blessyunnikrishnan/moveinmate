@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            background: #f7f7f7;
+        }
+
+        .login-container {
+            margin: 50px auto;
+            max-width: 900px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .login-box {
+            padding: 30px;
+        }
+
+        .login-box h5 {
+            font-size: 24px;
+            color: #00B98E;
+            margin-bottom: 20px;
+        }
+
+        .login-row {
+            margin-bottom: 15px;
+        }
+
+        .login-row input {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #00B98E;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #009e7d;
+        }
+
+        .btn-light {
+            border: 1px solid #ccc;
+        }
+
+        .donroo a {
+            color: #00B98E;
+        }
+
+        .donroo a:hover {
+            text-decoration: underline;
+        }
+
+        .copyc {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row login-container">
+            <div class="col-lg-6 img-box" style="
+            align-content: center;
+        ">
+                <img src="img/property-1.jpg" alt="Login Banner" >
+            </div>
+            <div class="col-lg-6">
+                <div class="login-box">
+                    <h5>Welcome Back!</h5>
+                    <form id="loginForm" onsubmit="submitLogin(event)">
+                        <div class="login-row">
+                            <label><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="login-row">
+                            <label><i class="fas fa-unlock-alt"></i> Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                       
+                        <div class="login-row text-center">
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                        <div class="login-row donroo text-center">
+                            <p>Don't have an Account? <a href="signup.html">Sign Up</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/loginScripts.js"></script>
+</html>
