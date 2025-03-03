@@ -1,0 +1,20 @@
+<input type="text" id="eircode" placeholder="Enter Eircode" />
+<a id="mapLink" href="#" target="_blank" style="display:none;">View in Google Maps</a>
+<button onclick="generateLink()">Generate Link</button>
+
+<script>
+  function generateLink() {
+    const eircode = document.getElementById("eircode").value.trim();
+    const mapLink = document.getElementById("mapLink");
+
+    if (eircode) {
+      const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(eircode)}`;
+      mapLink.href = url;
+      mapLink.style.display = "inline";
+      mapLink.textContent = `View location for ${eircode}`;
+    } else {
+      alert("Please enter a valid Eircode.");
+      mapLink.style.display = "none";
+    }
+  }
+</script>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+   
+    <style>
+        body {
+            background: #f7f7f7;
+        }
+
+        .signup-container {
+            margin: 50px auto;
+            max-width: 900px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .signup-box {
+            padding: 30px;
+        }
+
+        .signup-box h5 {
+            font-size: 24px;
+            color: #00B98E;
+            margin-bottom: 20px;
+        }
+
+        .signup-row {
+            margin-bottom: 15px;
+        }
+
+        .signup-row input,
+        .signup-row select {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #00B98E;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #009e7d;
+        }
+
+        .donroo a {
+            color: #00B98E;
+        }
+
+        .donroo a:hover {
+            text-decoration: underline;
+        }
+
+        .copyc {
+            text-align: center;
+            padding: 17px;
+            color: #999;
+        }
+        .header {
+            background-color: #00B98E;
+            /* Soft blue color */
+            color: #ffffff;
+            /* White text */
+            font-size: 2rem;
+            /* Large font size */
+            font-weight: bold;
+            /* Bold text */
+            text-align: center;
+            /* Center-align the text */
+            padding: 15px 20px;
+            /* Add padding for spacing */
+            border-bottom: 3px solid #02785d;
+            /* Subtle border for separation */
+            font-family: 'Arial', sans-serif;
+            /* Clean font */
+            text-transform: uppercase;
+            /* Make the text uppercase */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            /* Add slight shadow */
+        }
+    </style>
+</head>
+
+<body>
+      <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+        <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+            <div class="icon p-2 me-2">
+                <img class="img-fluid" src="../img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
+            </div>
+            <h1 class="m-0 text-primary">MoveInMate</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <a href="dealerindex.html" class="nav-item nav-link ">Home</a>
+                 <a href="booking-manage.html" class="nav-item nav-link">Manage Bookings</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Property</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="AddBuilding.html" class="dropdown-item">Add Property</a>
+                         <a href="propertypage.html" class="dropdown-item">View Properties</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="dealerprofile.html" class="dropdown-item">Profile</a>
+                        <a href="#" class="dropdown-item" onclick="handleLogout()">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+   <!-- Navbar endding-->
+
+    <div class="container">
+        <div class="row signup-container">
+            <div class="col-lg-6 img-box">
+                <img src="../img/carousel-2.jpg" alt="Signup Banner">
+            </div>
+            <div class="col-lg-6">
+                <div class="signup-box">
+                    <h5>Update Profile</h5>
+                    <form id="update-profile-form">
+                        <div class="signup-row">
+                            <label><i class="fas fa-user"></i> Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="signup-row">
+                            <label><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="signup-row">
+                            <label><i class="fas fa-users"></i> Role</label>
+                            <input type="text" id="role" class="form-control" value="" readonly>
+                        </div>
+                        <div class="signup-row">
+                            <label><i class="fas fa-lock"></i> Irp Number</label>
+                            <input type="text" class="form-control" id="irp" required>
+                        </div>
+                        <div class="signup-row">
+                            <label><i class="fas fa-envelope" ></i> Mobile number</label>
+                            <input type="text" class="form-control" id="mobile" required>
+                        </div>
+                        
+                        <div class="signup-row text-center">
+                            <button class="btn btn-primary btn-block">Update Profile</button>
+                        </div>
+                        
+                    </form>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-4 mt-5">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3">Contact Us</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-2"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-2"></i>info@example.com</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3">Quick Links</h5>
+                    <a class="btn btn-link text-white-50" href="">Home</a>
+                    <a class="btn btn-link text-white-50" href="">About Us</a>
+                    <a class="btn btn-link text-white-50" href="">Contact</a>
+                    <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                </div>
+                <div class="col-lg-4 col-md-12 text-center">
+                    <h5 class="text-white mb-3">Stay Connected</h5>
+                    <div class="d-flex justify-content-center">
+                        <a class="btn btn-outline-light btn-social me-2" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social me-2" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social me-2" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; <a class="text-white-50" href="#">Your Site Name</a>, All Rights
+                        Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer End -->
+   
+</body>
+<script src="js/profileupdate.js"></script>
+
+</html>

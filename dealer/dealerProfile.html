@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Profile</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+   
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f7f7f7;
+        }
+
+        .profile-container {
+            margin: 50px auto;
+            max-width: 900px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .profile-header {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #00B98E;
+        }
+
+        .profile-details {
+            margin-bottom: 15px;
+        }
+
+        .profile-details label {
+            font-weight: bold;
+        }
+
+        .profile-details p {
+            font-size: 16px;
+        }
+
+        .profile-actions a {
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background-color: #00B98E;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #009e7d;
+        }
+
+        .btn-light {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Dealer Navbar -->
+     <div class="container-fluid nav-bar bg-transparent">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                <div class="icon p-2 me-2">
+                    <img class="img-fluid" src="../img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
+                </div>
+                <h1 class="m-0 text-primary">MoveInMate</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="dealerindex.html" class="nav-item nav-link active">Home</a>
+                     <a href="booking-manage.html" class="nav-item nav-link">Manage Bookings</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="AddBuilding.html" class="dropdown-item">Add Property</a>
+                             <a href="propertypage.html" class="dropdown-item">View Properties</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Account</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="dealerprofile.html" class="dropdown-item">Profile</a>
+                            <a href="#" class="dropdown-item" onclick="handleLogout()">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- Navbar End -->
+
+    <!-- Navbar End -->
+    <div class="container">
+        <div class="row profile-container">
+            <div class="col-lg-12">
+                <div class="profile-header">
+                    <h3>Guest Profile</h3>
+                    <p>Welcome to your profile. Here you can view your details.</p>
+                </div>
+
+                <!-- User Information -->
+                <div class="profile-details">
+                    <label>Name:</label>
+                    <p id="profile-name"></p>
+                </div>
+                <div class="profile-details">
+                    <label>Email:</label>
+                    <p id="profile-email"></p>
+                </div>
+                <div class="profile-details">
+                    <label>Role:</label>
+                    <p id="profile-role"></p>
+                </div>
+                <div class="profile-details">
+                    <label>irp:</label>
+                    <p id="profile-irp"></p>
+                </div>
+                <div class="profile-details">
+                    <label>mobile-number:</label>
+                    <p id="profile-mobile"></p>
+                </div>
+
+                <div class="profile-actions text-center">
+                    <a href="propertypage.html" class="btn btn-primary">Explore Properties</a>
+                    <a href="updateprofile.html" class="btn btn-light">Update Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 footer pt-4 mt-5">
+    <div class="container py-4">
+        <div class="row g-4">
+            <!-- Contact Us Section -->
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Contact Us</h5>
+               <p class="mb-2">
+  <i class="fa fa-map-marker-alt me-2"></i>
+  <a href="https://maps.app.goo.gl/dTwqzUngb6SeQDZZ9" target="_blank">Location</a>
+</p>
+
+                <p class="mb-2"><i class="fa fa-phone-alt me-2"></i>+353 87 442 2562</p>
+                <p class="mb-2"><i class="fa fa-envelope me-2"></i>moveInmate@gmail.com</p>
+            </div>
+            <!-- Quick Links Section -->
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Quick Links</h5>
+                <a class="btn btn-link text-white-50" href="dealerindex.html">Home</a>
+                <a class="btn btn-link text-white-50" href="manage-bookings.html">Manage Bookings</a>
+                <a class="btn btn-link text-white-50" href="AddBuilding.html">Add Property</a>
+                <a class="btn btn-link text-white-50" href="dealerprofile.html">View Properties</a>
+                <a class="btn btn-link text-white-50" href="dealerprofile.html">Profile</a>
+            </div>
+            <!-- Stay Connected Section -->
+            <div class="col-lg-4 col-md-12 text-center">
+                <h5 class="text-white mb-3">Stay Connected</h5>
+                <div class="d-flex justify-content-center">
+                    <a class="btn btn-outline-light btn-social me-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social me-2" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="mb-0">&copy; <a class="text-white-50" href="#">MoveInMate</a>, All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../lib/wow/wow.min.js"></script>
+<script src="../lib/easing/easing.min.js"></script>
+<script src="../lib/waypoints/waypoints.min.js"></script>
+<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="js/viewprofile.js"></script>
+</html>
